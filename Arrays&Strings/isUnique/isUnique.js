@@ -16,8 +16,22 @@ const isUniqueBruteForce = (string) => {
     return true;
 }
 
+/*
+    O(n) time, O(1) space
+*/
+const isUniqueHashTable = (string) => {
+    const characterCounts = {}; // keep track of our characters
+
+    for(let i = 0; i < string.length; i++) {
+        if(characterCounts.hasOwnProperty(string[i])) return false; // has a duplicate/not unique
+        characterCounts[string[i]] = 1;
+    }
+    return true;
+}
+
 const isUnique = (string) => {
-    return isUniqueBruteForce(string);
+    // return isUniqueBruteForce(string);
+    return isUniqueHashTable(string);
 }
 
 module.exports = isUnique;
