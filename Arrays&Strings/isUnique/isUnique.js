@@ -2,6 +2,10 @@
     What if you cannot use additional data structures?
 */
 
+
+/*
+    O(n^2) time, O(1) space
+*/
 const isUniqueBruteForce = (string) => {
     for(let i = 0; i < string.length; i++) {
         for(let j = 0; j < string.length; j++) {
