@@ -1,7 +1,7 @@
 const isUnique = require('./isUnique');
 
-test('empty array is unique', () => {
-    expect(isUnique([])).toBe(true);
+test('empty string is unique', () => {
+    expect(isUnique('')).toBe(true);
   });
 
   test('array without duplicates is unique', () => {
