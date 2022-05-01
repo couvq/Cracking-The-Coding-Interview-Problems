@@ -17,7 +17,7 @@ const isUniqueBruteForce = (string) => {
 }
 
 /*
-    O(n) time, O(1) space
+    O(n) time, O(n) space
 */
 const isUniqueHashTable = (string) => {
     const characterCounts = {}; // keep track of our characters
@@ -29,9 +29,26 @@ const isUniqueHashTable = (string) => {
     return true;
 }
 
+/*
+    O(n) time, O(n) space
+*/
+const isUniqueSet = (string) => {
+    // convert string to array of characters
+    let chars = [];
+    for(let i = 0; i < string.length; i++) {
+        chars.push(string[i]); // add each char to chars array
+    }
+    let uniqueChars = [...new Set(chars)]; // create set to remove duplicates then back to array
+    let uniqueString = uniqueChars.join(""); // array -> string
+
+    // compare string equality, if equal there were no duplicates/was unique
+    return uniqueString === string;
+}
+
 const isUnique = (string) => {
     // return isUniqueBruteForce(string);
-    return isUniqueHashTable(string);
+    // return isUniqueHashTable(string);
+    return isUniqueSet(string);
 }
 
 module.exports = isUnique;
